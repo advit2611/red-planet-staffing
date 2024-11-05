@@ -33,9 +33,93 @@ npx prisma migrate reset
 npm run start:dev
 ```
 
-## Submission
+## Top Three Workplaces
 
-Submit your solution by creating a pull request (PR) on this repository. Please **do not** merge your PR. Instead, return to your Hatchways assessment page to confirm your submission.
+After migrating the dataset and starting the next server, the top three workplaces can be queried with the `top-workplaces.ts` file. Afte running `npm run start:topWorplaces` it produces the following result:
+  ```json
+  [
+    {
+      "id": 14,
+      "name": "Saturn Systems",
+      "status": 0,
+      "shifts": [
+        {
+          "id": 17,
+          "createdAt": "2024-10-28T07:14:10.196Z",
+          "startAt": "2024-06-20T07:00:00.000Z",
+          "endAt": "2024-06-20T15:00:00.000Z",
+          "workplaceId": 14,
+          "workerId": 7,
+          "cancelledAt": null
+        },
+        {
+          "id": 18,
+          "createdAt": "2024-10-28T07:14:10.196Z",
+          "startAt": "2024-06-21T07:00:00.000Z",
+          "endAt": "2024-06-21T15:00:00.000Z",
+          "workplaceId": 14,
+          "workerId": 8,
+          "cancelledAt": null
+        },
+        {
+          "id": 19,
+          "createdAt": "2024-10-28T07:14:10.197Z",
+          "startAt": "2024-06-22T07:00:00.000Z",
+          "endAt": "2024-06-22T15:00:00.000Z",
+          "workplaceId": 14,
+          "workerId": 9,
+          "cancelledAt": null
+        }
+      ],
+      "shiftCount": 3
+    },
+    {
+      "id": 16,
+      "name": "Venus Ventures",
+      "status": 0,
+      "shifts": [
+        {
+          "id": 21,
+          "createdAt": "2024-10-28T07:14:10.198Z",
+          "startAt": "2024-06-24T07:00:00.000Z",
+          "endAt": "2024-06-24T15:00:00.000Z",
+          "workplaceId": 16,
+          "workerId": 15,
+          "cancelledAt": null
+        },
+        {
+          "id": 22,
+          "createdAt": "2024-10-28T07:14:10.199Z",
+          "startAt": "2024-06-25T07:00:00.000Z",
+          "endAt": "2024-06-25T15:00:00.000Z",
+          "workplaceId": 16,
+          "workerId": 2,
+          "cancelledAt": null
+        }
+      ],
+      "shiftCount": 2
+    },
+    {
+      "id": 11,
+      "name": "Deep Space Technologies",
+      "status": 0,
+      "shifts": [
+        {
+          "id": 15,
+          "createdAt": "2024-10-28T07:14:10.195Z",
+          "startAt": "2024-06-18T07:00:00.000Z",
+          "endAt": "2024-06-18T15:00:00.000Z",
+          "workplaceId": 11,
+          "workerId": 12,
+          "cancelledAt": null
+        }
+      ],
+      "shiftCount": 1
+    }
+  ]
+  ```
+
+  The `shiftCount` key shows the number of active shits on the workplace. The active shifts are filtered beforehand wherever the workplace had `status` code set to 0.
 
 ## API
 
